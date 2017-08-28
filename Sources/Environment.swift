@@ -40,7 +40,7 @@ class Environment {
     }
     
     static func initializeDatabaseConnector() {
-        MySQLConnector.host     = "127.0.0.1"
+        MySQLConnector.host     = "122.152.201.121"
         MySQLConnector.username = "root"
         MySQLConnector.password = "eelking"
         MySQLConnector.database = "eelking"
