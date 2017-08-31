@@ -17,12 +17,12 @@ server.serverPort = Environment.serverPort
 server.addRoutes(Routes(accounts.routes))
 server.addRoutes(Routes(files.routes))
 
-//if let tls = Environment.tls {
-//    server.ssl              = (tls.certPath, tls.keyPath ?? tls.certPath)
-//    server.caCert           = tls.caCertPath
-//    server.certVerifyMode   = tls.certVerifyMode
-//    server.cipherList       = tls.cipherList
-//}
+if let tls = Environment.tls {
+    server.ssl              = (tls.certPath, tls.keyPath ?? tls.certPath)
+    server.caCert           = tls.caCertPath
+    server.certVerifyMode   = tls.certVerifyMode
+    server.cipherList       = tls.cipherList
+}
 
 do {
     try server.start()

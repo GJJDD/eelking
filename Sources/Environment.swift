@@ -23,11 +23,11 @@ class Environment {
     }
     
     static var serverName : String {
-        return "sub.your-domain.com"
+        return "eelking.com"
     }
     
     static var serverPort : UInt16 {
-        return self.isXcode ? 8081 : 80 // change to 443 once you have the cert prepared! 
+        return self.isXcode ? 8081 : 443 // change to 443 once you have the cert prepared!
     }
     
     static var documentRoot : String {
@@ -36,11 +36,11 @@ class Environment {
     
     static var tls : TLSConfiguration? {
         guard self.isNotXcode else { return nil }
-        return TLSConfiguration(certPath: "/etc/letsencrypt/live/\(self.serverName)/fullchain.pem", keyPath: "/etc/letsencrypt/keys/0000_key-certbot.pem", certVerifyMode: OpenSSLVerifyMode.sslVerifyPeer)
+        return TLSConfiguration(certPath: "/etc/letsencrypt/live/\(self.serverName)/214151109780209.pem", keyPath: "/etc/letsencrypt/keys/214151109780209.key", certVerifyMode: OpenSSLVerifyMode.sslVerifyPeer)
     }
     
     static func initializeDatabaseConnector() {
-        MySQLConnector.host     = "122.152.201.121"
+        MySQLConnector.host     = "127.0.0.1"
         MySQLConnector.username = "root"
         MySQLConnector.password = "eelking"
         MySQLConnector.database = "eelking"
